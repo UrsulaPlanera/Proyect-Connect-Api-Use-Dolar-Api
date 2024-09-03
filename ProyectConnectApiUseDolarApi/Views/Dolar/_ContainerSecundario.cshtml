@@ -1,0 +1,24 @@
+﻿@model Dolar
+
+@{
+    Layout = null;
+}
+
+<div class="card my-3">
+    <div class="d-flex justify-content-between align-items-center p-2">
+        <div class="text-start mx-2">
+            <p class="fw-bold text-uppercase"><span>DÓLAR</span> @Model.Nombre</p>
+        </div>
+        <div class="d-flex text-center align-items-center">
+            <div class="px-2 mx-1">
+                <p>Compra</p>
+                <p>@Model.Compra</p>
+            </div>
+            <div style="width: 1px; height: 2rem; background-color: #4338CA"></div>
+            <div class="px-2">
+                <p>Venta</p>
+                <p>@Model.Venta</p>
+            </div>
+        </div>
+    </div>
+</div>

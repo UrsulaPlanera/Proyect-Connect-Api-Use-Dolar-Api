@@ -1,0 +1,23 @@
+﻿@model Dolar
+
+@{
+    Layout = null;
+}
+
+<div class="card my-3 px-5 py-3">
+    <div class="text-center my-3">
+        <p class="card-title fw-bold text-uppercase" style="font-size: 1.5rem;">
+            <span>DÓLAR</span> @Model.Nombre
+        </p>
+    </div>
+    <div class="d-flex justify-content-around align-items-center my-3">
+        <div class="mx-3 text-center">
+            <p>Compra</p>
+            <p class="fw-bold" style="font-size: 1.2rem; color:#4338CA"><span>$</span>@Model.Compra</p>
+        </div>
+        <div class="mx-3 text-center">
+            <p>Venta</p>
+            <p class="fw-bold" style="font-size: 1.2rem; color:#4338CA"><span>$</span>@Model.Venta</p>
+        </div>
+    </div>
+</div>

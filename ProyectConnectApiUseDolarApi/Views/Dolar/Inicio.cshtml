@@ -1,0 +1,46 @@
+﻿@model List<Dolar>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="d-flex align-items-center justify-content-end my-5">
+    <span>Datos obtenidos de </span>
+    <a class="btn p-1 mx-1" href="https://dolarapi.com/docs/" style="background-color: #4338CA; color: #fff;">dolarapi.com</a>
+</div>
+
+@if(Model != null)
+{
+    <div class="d-flex justify-content-around flex-wrap">
+        <div class="mx-3">
+            @foreach (var item in Model)
+            {
+                @if (item.Casa == "blue" || item.Casa == "oficial")
+                {
+                    <partial name="~/Views/Dolar/_ContainerPrincipal.cshtml" model="@item" />
+                }
+            }
+        </div>
+        <div class="mx-3">
+            @foreach (var item in Model)
+            {
+                @if (item.Casa != "blue" && item.Casa != "oficial")
+                {
+                    <partial name="~/Views/Dolar/_ContainerSecundario.cshtml" model="@item" />
+                }
+            }
+        </div>
+    </div>
+
+    @foreach(var item in Model)
+    {
+        <div class="text-center my-2">
+            <span>Actualizado: </span><span>@item.FechaActualizacion[0..10]</span>
+        </div>
+        break;
+    }
+}
+else
+{
+    <p>No se han encontrado datos.</p>
+}
